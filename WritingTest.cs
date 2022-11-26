@@ -41,7 +41,6 @@ public class WritingTest : VBoxContainer, IScene
 		answerSide.Text = "";
 		correctionLabel.BbcodeEnabled = true;
 		correctionLabel.Visible = false;
-		LoadStudyset(studySet);
 	}
 
 	
