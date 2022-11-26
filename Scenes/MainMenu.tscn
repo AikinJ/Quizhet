@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/RegularText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MainMenu.cs" type="Script" id=2]
+
+[node name="MainMenu" type="VBoxContainer"]
+margin_left = -8.0
+margin_right = 979.0
+margin_bottom = 560.0
+script = ExtResource( 2 )
+
+[node name="Open" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 241.0
+margin_right = 575.0
+margin_bottom = 278.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+custom_fonts/font = ExtResource( 1 )
+text = "Open studyset"
+
+[node name="Create" type="Button" parent="."]
+margin_left = 382.0
+margin_top = 282.0
+margin_right = 605.0
+margin_bottom = 319.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "Create new studyset"

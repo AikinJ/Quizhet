@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://StudysetEditor.cs" type="Script" id=1]
+[ext_resource path="res://Fonts/RegularText.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Title.tres" type="DynamicFont" id=3]
+[ext_resource path="res://SceneChangingButton.cs" type="Script" id=4]
+
+[node name="StudysetEditor" type="ScrollContainer"]
+margin_right = 987.0
+margin_bottom = 560.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 987.0
+margin_bottom = 161.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+margin_right = 987.0
+margin_bottom = 83.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 980.0
+margin_bottom = 76.0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_right = 415.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+custom_fonts/font = ExtResource( 3 )
+text = "Studyset Title"
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 419.0
+margin_right = 973.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "studyset description"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 87.0
+margin_right = 987.0
+margin_bottom = 107.0
+text = "Import cards from text"
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_left = 468.0
+margin_top = 111.0
+margin_right = 518.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "+"

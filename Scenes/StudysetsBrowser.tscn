@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/RegularText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://StudysetsBrowser.cs" type="Script" id=2]
+
+[node name="Studysets Browser" type="PanelContainer"]
+margin_top = 51.0
+margin_right = 958.0
+margin_bottom = 451.0
+rect_min_size = Vector2( 500, 400 )
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="StudysetBrowser" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 951.0
+margin_bottom = 393.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StudysetBrowser"]
+margin_right = 944.0
+margin_bottom = 31.0
+
+[node name="Label" type="Label" parent="StudysetBrowser/HBoxContainer"]
+margin_right = 166.0
+margin_bottom = 31.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "Studysets Path: "
+
+[node name="Button" type="Button" parent="StudysetBrowser/HBoxContainer"]
+margin_left = 170.0
+margin_right = 276.0
+margin_bottom = 31.0
+text = "Studysets path"
+
+[node name="Panel" type="Panel" parent="StudysetBrowser"]
+margin_top = 35.0
+margin_right = 944.0
+margin_bottom = 43.021
+rect_min_size = Vector2( 0, 8.021 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="StudysetBrowser"]
+margin_top = 47.0
+margin_right = 944.0
+margin_bottom = 386.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StudysetBrowser/ScrollContainer"]
+margin_right = 944.0
+margin_bottom = 339.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 951.0
+margin_bottom = 393.0
+window_title = "Open a Directory"
+resizable = true
+mode = 2
+access = 2

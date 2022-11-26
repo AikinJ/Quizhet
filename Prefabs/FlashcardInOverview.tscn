@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/RegularText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://FlashcardInOverview.cs" type="Script" id=2]
+
+[node name="FlashcardInOverview" type="HBoxContainer"]
+margin_right = 973.0
+margin_bottom = 45.0
+script = ExtResource( 2 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 484.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 477.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "frontside"
+clip_text = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+margin_left = 488.0
+margin_right = 973.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 478.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "backside"
+clip_text = true

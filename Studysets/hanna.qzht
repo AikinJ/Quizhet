@@ -1,0 +1,24 @@
+0.01
+hanna
+is a cute girl
+0|hanna is	|fun|0
+1|kruskal-wallis|Bekijken mensen met een hogere scholingsgraad (uitgedrukt in hoogst behaalde diploma, ‘Diploma’) vaker online video’s (‘OnlineVideo’)?|0
+2|kruskal-wallis|Verschillen de respondenten van verscheidene leeftijdscategorieën (‘LeeftijdCat’) wat betreft hun antwoord op de stelling: “Ik ben bereid meer te betalen voor een snellere verbinding” (‘MeerBetalen’)?|0
+3|wilcoxon|Is er een verschil tussen het opleidingsniveau van mensen hebben en hun inkomenscategorie?(beiden ordinaal)|0
+4|wilcoxon|Is er een verschil tussen de mate (hoe vaak) waarin mensen muziek downloaden (‘Muziek’) en films downloaden (‘Films’)? |0
+5|mann whitney|Verschillen mannen en vrouwen wat betreft hun antwoord op de stelling: “Ik ben bereid meer te betalen voor een snellere verbinding” (‘MeerBetalen’)?|0
+6|kruskal-wallis|Verschillen de respondenten van verscheidene leeftijdscategorieën (‘LeeftijdCat’) in hoe vaak ze muziek downloaden (‘Muziek’)?|0
+7|mann whitney|Versturen mannen thuis meer e-mails dan vrouwen (‘Email’)?|0
+8|wilcoxon|Is er een verschil tussen de mate (hoe vaak) waarin mensen foto’s bekijken (‘FotoBekijken’) en foto’s opladen (‘FotoOpladen’)? |0
+9|z-formule|Is het verschil tussen het percentage werknemers in de private sector die wel een internetverbinding hebben en het percentage werknemers in de private sector die geen internetverbinding hebben significant?|0
+10|t-test|Verschillen mannen en vrouwen significant in het aantal minuten dat ze gemiddeld per week surfen op het Internet?|0
+11|one way anova|Zijn er significante verschillen tussen het aantal minuten dat personen uit verschillende leeftijdsgroepen (6) per week online video’s bekijken? (N voor alle groepen >30)|0
+12|one way anova|Verschillen respondenten uit verscheidene leeftijdscategorieën wat betreft hun antwoorden op de volgende stelling|0
+13|pearson|Is er een verband tussen de scholingsgraad van iemand (‘Diploma’ (ordinaal)) en de mate waarin men online spelletjes speelt (‘Q8.3Spel’ (ordinaal))?|0
+14|spearman|Is er een verband tussen de leeftijd (‘Leeftijd’) van iemand en de mate waarin men verwacht dat de prijs voor sneller internet in de toekomst hoger zal liggen (‘Q9.9Prijs’ (5 punten likert))?|0
+15|one way anova|Verschilt de perceptie van de geloofwaardigheid (5-punten likert schaal) van een tekst naargelang de bron die communiceert (expert versus overheid versus journalist)?|0
+16|t-test|Verschilt de perceptie van de geloofwaardigheid (5-punten likert schaal)  van een tekst naargelang de communicatiestijl (emotief versus factueel)?|0
+17|two way anova|Is er een interactie effect tussen bron en stijl op geloofwaardigheid van een tekst?|0
+18|two way anova|Is er een interactie tussen geslacht en leeftijds-categorieën voor wat betreft opinieleiderschap?|0
+19|glm multivariate|Verschil tussen gescheiden mensen, getrouwde mensen, alleenstaande mensen en weduwen/weduwnaars (brugstan) voor wat betreft het aantal minuten per week men naar de radio luistert (radiotij), tv kijkt (tvtijd) en internet gebruikt (internettij) |0
+20|glm repeated measures|Is het verschil in de mate dat men de nationale versus de Europese versus de lokale overheid voorbereid acht op terroristische aanslagen verschillend naar gelang men in de stad of op het platteland woont?|0

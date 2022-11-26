@@ -1,0 +1,3 @@
+StudysetsPath=D:/Godot/Projects/Quizhet/Build2
+
+uizhet.exe
