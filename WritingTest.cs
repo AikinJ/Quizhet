@@ -28,9 +28,6 @@ public class WritingTest : VBoxContainer, IScene
 
 	public override void _Ready()
 	{
-		StudySet studySet = new StudySet("wat is een bij?#een insectje\nwat is honing?#een zoete substantie gemaakt door de bij\nwat is honing?#een zoete substantie gemaakt door de bij", '\n', '#');
-
-
 		writingTest = this;
 		questionSide = GetNode<Label>("QuestionSide");
 		answerSide = GetNode<LineEdit>("AnswerSide");
