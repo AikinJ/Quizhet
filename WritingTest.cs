@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 public class WritingTest : VBoxContainer, IScene
 {
-	private Label questionSide;
-	private LineEdit answerSide;
 	public static WritingTest writingTest;
 
-	private RichTextLabel correctionLabel;
-
+	Label questionSide;
+	LineEdit answerSide;
 	Test test;
+	RichTextLabel correctionLabel;
+	
+	bool _shouldBeReversed = false;
 
-	private bool _shouldBeReversed = false;
 	public bool shouldBeReversed
 	{
 		get
@@ -25,7 +25,6 @@ public class WritingTest : VBoxContainer, IScene
 		}
 	}
 
-	public SceneManager.Scene thisScene { get { return SceneManager.Scene.WritingTest; } }
 
 	public override void _Ready()
 	{
@@ -126,9 +125,17 @@ public class WritingTest : VBoxContainer, IScene
 		}
 	}
 
-	static readonly string redcolourstart = "[color=#eb4b4b]";
+	static string redcolor = "eb4b4b";
+	static string greencolor = "6fbf8a";
+    static readonly string redcolourstart = "[color=#eb4b4b]";
 	static readonly string greencolourstart = "[color=#6fbf8a]";
 	static readonly string colourend = "[/color]";
+
+
+	private string MakeStringColor(string stringtocolor, string color)
+	{
+		return $"[color=#{color}]{stringtocolor}{colourend}";
+	}
 
 	private void CheckAnswer()
 	{
@@ -141,59 +148,59 @@ public class WritingTest : VBoxContainer, IScene
 			string displaytext = $"You said: ";
 			string[] answeredwords = answer.Split(' ');
 			string[] correctwords = currentCorrectAnswer.Split(' ');
-
 			List<int> incorrectwords = new List<int>();
 			for (int i = 0; i < answeredwords.Length; i++)
 			{
+				//the current word exceeds the number of words in correct answer
 				if (i >= correctwords.Length)
 				{
-					displaytext += $"{redcolourstart}{answeredwords[i]}{colourend}";
+					displaytext += MakeStringColor(answeredwords[i], redcolor);
+                    incorrectwords.Add(i);
 				}
+				//the current word is the same as the correct word
 				else if(answeredwords[i].ToLower() == correctwords[i].ToLower())
 				{
 					displaytext += answeredwords[i];
 					displaytext += ' ';
 				}
+				//the current word is incorrect
 				else
 				{
-					incorrectwords.Add(i);
-					bool lastwasincorrect = false;
+                    incorrectwords.Add(i);		
+                    bool lastcharacterwasincorrect = false;
 					for (int j = 0; j < answeredwords[i].Length; j++)
 					{
+						//character exceeds number of characters in correct word
 						if (j >= correctwords[i].Length)
 						{
-							GD.Print("answer given word is longer than correct word");
-							if (!lastwasincorrect)
-							{
-								displaytext += redcolourstart;
-							}
+							if (!lastcharacterwasincorrect)displaytext += redcolourstart;
 							displaytext += answeredwords[i][j];
-							lastwasincorrect = true;
+							lastcharacterwasincorrect = true;
 						}
-						else if (correctwords[i][j] == answeredwords[i][j])
+						//character is correct
+						else if (correctwords[i][j].ToString().ToLower() == answeredwords[i][j].ToString().ToLower())
 						{
-							GD.Print($"letter {correctwords[i][j]} matches");
-							if (lastwasincorrect)
+							if (lastcharacterwasincorrect)
 							{
-								lastwasincorrect = false;
+								lastcharacterwasincorrect = false;
 								displaytext += colourend;
 							}
 							displaytext += correctwords[i][j];
 						}
+						//character is incorrect
 						else
 						{
-							GD.Print($"letter {answeredwords[i][j]} is wrong");
-							if (!lastwasincorrect)
+							if (!lastcharacterwasincorrect)
 							{
 								displaytext += redcolourstart;
-								lastwasincorrect = true;
+								lastcharacterwasincorrect = true;
 							}
 							displaytext += answeredwords[i][j];
 						}
+						//last character, needs to add the colorend if the color is open
 						if (j == answeredwords[i].Length - 1)
 						{
-							GD.Print($"this happens");
-							if (lastwasincorrect) displaytext += colourend;
+							if (lastcharacterwasincorrect) displaytext += colourend;
 							displaytext += ' ';
 						}
 					}
@@ -234,16 +241,21 @@ public class WritingTest : VBoxContainer, IScene
 	{
 		if(state == State.practicerewriting)
 		{
-			if(newtext.ToLower() == currentCorrectAnswer.ToLower())
-			{
-				state = State.corrected;
-				correctionLabel.BbcodeText = "";
-				questionSide.Text = "";
-				answerSide.Text = "";
-				Next();
-			}
-		}
+			CheckPracticeAnswer(newtext);
+        }
 	}
+
+	private void CheckPracticeAnswer(string newtext)
+	{
+        if (newtext.ToLower() == currentCorrectAnswer.ToLower())
+        {
+            state = State.corrected;
+            correctionLabel.BbcodeText = "";
+            questionSide.Text = "";
+            answerSide.Text = "";
+            Next();
+        }
+    }
 
 	public void OnTextEnteredInAnswerSide(string newtext)
 	{
@@ -257,4 +269,5 @@ public class WritingTest : VBoxContainer, IScene
 		correctionLabel.Visible = true;
 		correctionLabel.Text = "Congratulations! test complete";
 	}
+	public SceneManager.Scene thisScene { get { return SceneManager.Scene.WritingTest; } }
 }
