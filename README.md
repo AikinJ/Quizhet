@@ -1,3 +1,3 @@
 # Quizhet
-flashcard program made in GODOT
+flashcard program made in GODOT using C#
 
