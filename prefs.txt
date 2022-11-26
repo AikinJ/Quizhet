@@ -1,3 +1,0 @@
-StudysetsPath=D:/Godot/Projects/Quizhet/Studysets
-
-ono_win64/Godot.exe
